@@ -9,7 +9,7 @@ button,table,#game,body,td {
 }
 
 #game,#gameboard {
-    width:67%;
+    width:620px;
 }
 
 #gameboard,.leg {
