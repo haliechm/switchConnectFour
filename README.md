@@ -2,7 +2,7 @@
 UNC COMP580 Project | Switch accessible connect four game
 Expanded upon Connect Four game made by John Slegers : https://gist.github.com/jslegers/6054902
 
-Link to game: 
+LINK TO GAME: https://haliechm.github.io/switchConnectFour/
 
 HOW TO PLAY:
 
