@@ -22,6 +22,7 @@ function chooseArrow() {
     document.getElementById("right").setAttribute("style", "background: 	#FFC0CB;");
     numFilled++;
     var j = currentCol;
+    var delayInMilliseconds = 500;
     if(!finished){
                     for (var t = 6;t>0;t--){
                         if(testClass(t,j,'')){
@@ -30,8 +31,11 @@ function chooseArrow() {
                                 newGame("It's a tie! Play again to see who the real winner is");
                             }
                             if(horizontalWon(t,j) || verticalWon(t,j) || diagonalLtrWon(t,j) || diagonalRtlWon(t,j)){
-                                finished = true;
+				setTimeout(function() {
+        			finished = true;
                                 newGame(wonMessage.replace("%s",players[current]));
+       				}, delayInMilliseconds);
+                                
                             } else {
                                 changePlayer();
                             }
