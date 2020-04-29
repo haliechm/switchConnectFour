@@ -741,7 +741,10 @@ function filled() {
         if (confirm(message)){
 //            document.location.reload();
 //            forAllCells(emptyField);
-            
+             for (var i = 0; i < 20; i++) {
+                notBeenFoundVertical[i] = true;
+                notBeenFoundVerticalOwn[i] = true;
+            }
             document.getElementById("c-1-" + currentCol).removeAttribute("style", "background: yellow;");
             document.getElementById("c-1-" + currentCol).removeAttribute("style", "background: red;");
             human = false;
