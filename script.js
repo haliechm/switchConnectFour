@@ -28,21 +28,635 @@ function computerAIEasy() {
         
     } else if (foundThreeVerticalOpp()) {
         // found opponentThree vertical 3 in a row
+    } else if(foundThreeHorizontalOpp()) {
+              
     } else {
-        
-        while(notFoundYet) {
-          if(testClass(1, currentCol, '')) {
-              notFoundYet=false;
-         } else {
+    while(notFoundYet) {
+        if(testClass(1, currentCol, '')) {
+            notFoundYet=false;
+        } else {
             currentCol = Math.ceil(Math.random() * 7);
-         }
-       }
+        }
+    }
     }
     
     console.log("in ai - col: " + currentCol);
     chooseArrow();
 
     return;
+}
+    
+    function foundThreeHorizontalOpp() {
+    // row, col
+    
+    // row 6
+      if(testClass(6, 4, "")  && testClass(6, 1, players[(current+1)%2])  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 3, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 1, "")  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])) {
+        currentCol = 1;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 5, "")  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 2, "")  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+     if(testClass(6, 6, "")  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+     if(testClass(6, 3, "")  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])  && testClass(6, 6, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 7, "")  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])  && testClass(6, 6, players[(current+1)%2])) {
+        currentCol = 7;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 4, "")  && testClass(6, 5, players[(current+1)%2])  && testClass(6, 6, players[(current+1)%2])  && testClass(6, 7, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(6, 2, "")  && testClass(6, 1, players[(current+1)%2])  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 3, "")  && testClass(6, 1, players[(current+1)%2])  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(6, 3, "")  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(6, 4, "")  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 5, "")  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 6, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 4, "")  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])  && testClass(6, 6, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(6, 6, "")  && testClass(6, 4, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])  && testClass(6, 7, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+      if(testClass(6, 4, "")  && testClass(6, 2, players[(current+1)%2])  && testClass(6, 3, players[(current+1)%2])  && testClass(6, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    // row 5
+    
+     if(testClass(5, 4, "")  && testClass(5, 1, players[(current+1)%2])  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 3, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 1, "")  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])) {
+        currentCol = 1;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 5, "")  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 2, "")  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+     if(testClass(5, 6, "")  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+     if(testClass(5, 3, "")  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])  && testClass(5, 6, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 7, "")  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])  && testClass(5, 6, players[(current+1)%2])) {
+        currentCol = 7;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 4, "")  && testClass(5, 5, players[(current+1)%2])  && testClass(5, 6, players[(current+1)%2])  && testClass(5, 7, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    // 
+    if(testClass(5, 2, "")  && testClass(5, 1, players[(current+1)%2])  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 3, "")  && testClass(5, 1, players[(current+1)%2])  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(5, 3, "")  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(5, 4, "")  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 5, "")  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 6, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 4, "")  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])  && testClass(5, 6, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(5, 6, "")  && testClass(5, 4, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])  && testClass(5, 7, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+      if(testClass(5, 4, "")  && testClass(5, 2, players[(current+1)%2])  && testClass(5, 3, players[(current+1)%2])  && testClass(5, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+    
+    // row 4
+    
+        if(testClass(4, 4, "")  && testClass(4, 1, players[(current+1)%2])  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 3, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 1, "")  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])) {
+        currentCol = 1;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 5, "")  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 2, "")  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+     if(testClass(4, 6, "")  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+     if(testClass(4, 3, "")  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])  && testClass(4, 6, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 7, "")  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])  && testClass(4, 6, players[(current+1)%2])) {
+        currentCol = 7;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 4, "")  && testClass(4, 5, players[(current+1)%2])  && testClass(4, 6, players[(current+1)%2])  && testClass(4, 7, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    //
+    if(testClass(4, 2, "")  && testClass(4, 1, players[(current+1)%2])  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 3, "")  && testClass(4, 1, players[(current+1)%2])  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(4, 3, "")  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(4, 4, "")  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 5, "")  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 6, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 4, "")  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])  && testClass(4, 6, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(4, 6, "")  && testClass(4, 4, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])  && testClass(4, 7, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+      if(testClass(4, 4, "")  && testClass(4, 2, players[(current+1)%2])  && testClass(4, 3, players[(current+1)%2])  && testClass(4, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+    
+    // row 3
+    
+          if(testClass(3, 4, "")  && testClass(3, 1, players[(current+1)%2])  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 3, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 1, "")  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])) {
+        currentCol = 1;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 5, "")  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 2, "")  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+     if(testClass(3, 6, "")  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+     if(testClass(3, 3, "")  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])  && testClass(3, 6, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 7, "")  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])  && testClass(3, 6, players[(current+1)%2])) {
+        currentCol = 7;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 4, "")  && testClass(3, 5, players[(current+1)%2])  && testClass(3, 6, players[(current+1)%2])  && testClass(3, 7, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    //
+    if(testClass(3, 2, "")  && testClass(3, 1, players[(current+1)%2])  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 3, "")  && testClass(3, 1, players[(current+1)%2])  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(3, 3, "")  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(3, 4, "")  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 5, "")  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 6, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 4, "")  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])  && testClass(3, 6, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(3, 6, "")  && testClass(3, 4, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])  && testClass(3, 7, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+      if(testClass(3, 4, "")  && testClass(3, 2, players[(current+1)%2])  && testClass(3, 3, players[(current+1)%2])  && testClass(3, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+    // row 2
+    
+          if(testClass(2, 4, "")  && testClass(2, 1, players[(current+1)%2])  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 3, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 1, "")  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])) {
+        currentCol = 1;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 5, "")  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 2, "")  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+     if(testClass(2, 6, "")  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+     if(testClass(2, 3, "")  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])  && testClass(2, 6, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 7, "")  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])  && testClass(2, 6, players[(current+1)%2])) {
+        currentCol = 7;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 4, "")  && testClass(2, 5, players[(current+1)%2])  && testClass(2, 6, players[(current+1)%2])  && testClass(2, 7, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    //
+    if(testClass(2, 2, "")  && testClass(2, 1, players[(current+1)%2])  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 3, "")  && testClass(2, 1, players[(current+1)%2])  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(2, 3, "")  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(2, 4, "")  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 5, "")  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 6, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 4, "")  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])  && testClass(2, 6, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(2, 6, "")  && testClass(2, 4, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])  && testClass(2, 7, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+      if(testClass(2, 4, "")  && testClass(2, 2, players[(current+1)%2])  && testClass(2, 3, players[(current+1)%2])  && testClass(2, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+    
+    // row 1
+             if(testClass(1, 4, "")  && testClass(1, 1, players[(current+1)%2])  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 3, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 1, "")  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])) {
+        currentCol = 1;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 5, "")  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 2, "")  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+     if(testClass(1, 6, "")  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+     if(testClass(1, 3, "")  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])  && testClass(1, 6, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 7, "")  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])  && testClass(1, 6, players[(current+1)%2])) {
+        currentCol = 7;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 4, "")  && testClass(1, 5, players[(current+1)%2])  && testClass(1, 6, players[(current+1)%2])  && testClass(1, 7, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    //
+    if(testClass(1, 2, "")  && testClass(1, 1, players[(current+1)%2])  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])) {
+        currentCol = 2;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 3, "")  && testClass(1, 1, players[(current+1)%2])  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(1, 3, "")  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])) {
+        currentCol = 3;
+        return true;
+                    
+        }
+    
+        if(testClass(1, 4, "")  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 5, "")  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 6, players[(current+1)%2])) {
+        currentCol = 5;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 4, "")  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])  && testClass(1, 6, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+    
+      if(testClass(1, 6, "")  && testClass(1, 4, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])  && testClass(1, 7, players[(current+1)%2])) {
+        currentCol = 6;
+        return true;
+                    
+        }
+    
+      if(testClass(1, 4, "")  && testClass(1, 2, players[(current+1)%2])  && testClass(1, 3, players[(current+1)%2])  && testClass(1, 5, players[(current+1)%2])) {
+        currentCol = 4;
+        return true;
+                    
+        }
+    
+  
+    
+    return false;
 }
     
     function foundThreeVerticalOwn() {
