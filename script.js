@@ -6,23 +6,37 @@
     var numFilled = 0;
     var human = true;
     var easy = true;
+    var notBeenFoundVertical=[];
+    var notBeenFoundVerticalOwn = [];
     
 window.onload = function() {
     console.log("Window loaded");
     highlightFirstArrow();
+    
+     for (var i = 0; i < 20; i++) {
+      notBeenFoundVertical[i] = true;
+        notBeenFoundVerticalOwn[i] = true;
+    }
 }
 
 function computerAIEasy() {
-    console.log("In computer AI");
+    
     var notFoundYet = true;
     currentCol = Math.ceil(Math.random() * 7);
     // choose random column for computer
-    while(notFoundYet) {
-        if(testClass(1, currentCol, '')) {
-            notFoundYet=false;
-        } else {
+    if (foundThreeVerticalOwn()) {
+        
+    } else if (foundThreeVerticalOpp()) {
+        // found opponentThree vertical 3 in a row
+    } else {
+        
+        while(notFoundYet) {
+          if(testClass(1, currentCol, '')) {
+              notFoundYet=false;
+         } else {
             currentCol = Math.ceil(Math.random() * 7);
-        }
+         }
+       }
     }
     
     console.log("in ai - col: " + currentCol);
@@ -30,6 +44,398 @@ function computerAIEasy() {
 
     return;
 }
+    
+    function foundThreeVerticalOwn() {
+    if(testClass(3, 1, "") && notBeenFoundVerticalOwn[0] && testClass(6, 1, players[current]) && testClass(5, 1, players[current]) && testClass(4, 1, players[current])) {
+        console.log("1");
+        currentCol = 1;
+                    
+        // now this one has already been found
+        notBeenFoundVerticalOwn[0] = false;
+        return true;
+                    
+                    
+                }
+//    
+     if(testClass(2, 1, "") && notBeenFoundVerticalOwn[1] && testClass(5, 1, players[current]) && testClass(4, 1, players[current]) && testClass(3, 1, players[current])) {
+        console.log("2");
+                            notBeenFoundVerticalOwn[1] = false;
+        currentCol = 1;
+        return true;
+    }
+    
+     if(testClass(1, 1, "") && notBeenFoundVerticalOwn[2] && testClass(4, 1, players[current]) && testClass(3, 1, players[current]) && testClass(2, 1, players[current])) {
+                    notBeenFoundVerticalOwn[2] = false;
+        console.log("3");
+        currentCol = 1;
+        return true;
+    }
+//    
+//    
+       if(testClass(3, 2, "") && notBeenFoundVerticalOwn[3] && testClass(6, 2, players[current]) && testClass(5, 2, players[current]) && testClass(4, 2, players[current])) 
+    
+    {
+                   notBeenFoundVerticalOwn[3] = false;
+        console.log("4");
+        currentCol = 2;
+        return true;
+    }
+    
+     if(testClass(2, 2, "") && notBeenFoundVerticalOwn[4] && testClass(5, 2, players[current]) && testClass(4, 2, players[current]) && testClass(3, 2, players[current])) {
+                 notBeenFoundVerticalOwn[4] = false;
+        console.log("5");
+        currentCol = 2;
+        return true;
+    }
+    
+     if(testClass(1, 2, "") && notBeenFoundVerticalOwn[5] && testClass(4, 2, players[current]) && testClass(3, 2, players[current]) && testClass(2, 2, players[current])) {
+                 notBeenFoundVerticalOwn[5] = false;
+        console.log("6");
+        currentCol = 2;
+        return true;
+    }
+//    
+//    
+         if(testClass(3, 3, "") && notBeenFoundVerticalOwn[6] && testClass(6, 3, players[current]) && testClass(5, 3, players[current]) && testClass(4, 3, players[current])) {
+                     notBeenFoundVerticalOwn[6] = false;
+        console.log("7");
+        currentCol = 3;
+        return true;
+    }
+    
+     if(testClass(2, 3, "") && notBeenFoundVerticalOwn[7] && testClass(5, 3, players[current]) && testClass(4, 3, players[current]) && testClass(3, 3, players[current])) {
+                 notBeenFoundVerticalOwn[7] = false;
+        console.log("8");
+        currentCol = 3;
+        return true;
+    }
+    
+     if(testClass(1, 3, "") && notBeenFoundVerticalOwn[8] && testClass(4, 3, players[current]) && testClass(3, 3, players[current]) && testClass(2, 3, players[current])) {
+                 notBeenFoundVertical[8] = false;
+        console.log("9");
+        currentCol = 3;
+        return true;
+    }
+//    
+             if(testClass(3, 4, "") && notBeenFoundVerticalOwn[9] && testClass(6, 4, players[current]) && testClass(5, 4, players[current]) && testClass(4, 4, players[current])) {
+                         notBeenFoundVerticalOwn[9] = false;
+        console.log("10");
+        currentCol = 4;
+        return true;
+    }
+    
+     if(testClass(2, 4, "") && notBeenFoundVerticalOwn[10] && testClass(5, 4, players[current]) && testClass(4, 4, players[current]) && testClass(3, 4, players[current])) {
+                 notBeenFoundVerticalOwn[10] = false;
+        console.log("11");
+        currentCol = 4;
+        return true;
+    }
+    
+     if(testClass(1, 4, "") && notBeenFoundVerticalOwn[11] && testClass(4, 4, players[current]) && testClass(3, 4, players[current]) && testClass(2, 4, players[current])) {
+                 notBeenFoundVerticalOwn[11] = false;
+        console.log("12");
+        currentCol = 4;
+        return true;
+    }
+//    
+                 if(testClass(3, 5, "") && notBeenFoundVerticalOwn[12] && testClass(6, 5, players[current]) && testClass(5, 5, players[current]) && testClass(4, 5, players[current])) {
+                             notBeenFoundVerticalOwn[12] = false;
+        console.log("13");
+        currentCol = 5;
+        return true;
+    }
+    
+     if(testClass(2, 5, "") && notBeenFoundVerticalOwn[13] && testClass(5, 5, players[current]) && testClass(4, 5, players[current]) && testClass(3, 5, players[current])) {
+                 notBeenFoundVerticalOwn[13] = false;
+        console.log("14");
+        currentCol = 5;
+        return true;
+    }
+    
+     if(testClass(1, 5, "") && notBeenFoundVerticalOwn[14] && testClass(4, 5, players[current]) && testClass(3, 5, players[current]) && testClass(2, 5, players[current])) {
+                 notBeenFoundVertical[14] = false;
+        console.log("15");
+        currentCol = 5;
+        return true;
+    }
+//    
+//      
+                 if(testClass(3, 6, "") && notBeenFoundVerticalOwn[15] && testClass(6, 6, players[current]) && testClass(5, 6, players[current]) && testClass(4, 6, players[current])) {
+                             notBeenFoundVertical[15] = false;
+        console.log("16");
+        currentCol = 6;
+        return true;
+    }
+    
+     if(testClass(2, 6, "") && notBeenFoundVerticalOwn[16] && testClass(5, 6, players[current]) && testClass(4, 6, players[current]) && testClass(3, 6, players[current])) {
+                 notBeenFoundVertical[16] = false;
+        console.log("17");
+        currentCol = 6;
+        return true;
+    }
+    
+     if(testClass(1, 6, "") && notBeenFoundVerticalOwn[17] && testClass(4, 6, players[current]) && testClass(3, 6, players[current]) && testClass(2, 6, players[current])) {
+                 notBeenFoundVertical[17] = false;
+        console.log("18");
+        currentCol = 6;
+        return true;
+    }
+//    
+                     if(testClass(3, 7, "") && notBeenFoundVerticalOwn[18] && testClass(6, 7, players[current]) && testClass(5, 7, players[current]) && testClass(4, 7, players[current])) {
+                                 notBeenFoundVerticalOwn[18] = false;
+        console.log("19");
+        currentCol = 7;
+        return true;
+    }
+    
+     if(testClass(2, 7, "") && notBeenFoundVerticalOwn[19] && testClass(5, 7, players[current]) && testClass(4, 7, players[current]) && testClass(3, 7, players[current])) {
+                 notBeenFoundVerticalOwn[19] = false;
+        console.log("20");
+        currentCol = 7;
+        return true;
+    }
+    
+     if(testClass(1, 7, "") && notBeenFoundVerticalOwn[20] && testClass(4, 7, players[current]) && testClass(3, 7, players[current]) && testClass(2, 7, players[current])) {
+                 notBeenFoundVerticalOwn[20] = false;
+        console.log("21");
+        currentCol = 7;
+        return true;
+    }
+    return false;
+}
+    
+    
+function foundThreeVerticalOpp() {
+    
+    // [0][6] largest
+    // [5][0] largets
+    // first row, second column
+    
+    // testClass(row, col)
+    // testClass(6, 1) refers to bottom left
+    
+    // col 1-7 (second param)
+    // go through row 6-4
+    // row 5-3
+    // row 5-2
+    
+//    var found3 = 0;
+//    
+//    for (var colu=1; colu<=7; colu++) {
+//        if(found3 == 3) {
+//            console.log("_______");
+//            currentCol = colu - 1;
+//            return true;
+//        }
+//        found3 = 0;
+//        for (var rowu = 6; rowu<=4; rowu--) {
+//            if (testClass(rowu, colu, players[(current+1)%2])) {
+//                found3 = found3 + 1;
+//               
+//                break;
+//            } else {
+//                found3 = 0;
+//            }
+//             console.log("3: "+ found3);
+//            
+////            if (testClass(rowu, colu, players[current])) {
+////                found3 = found3 + 1;
+////                break;
+////            } else {
+////                found3 = 0;
+////            }
+//            
+//        }
+//    }
+    
+//    for(var colu=1; colu<=7; colu++) {
+//        if (found3) {
+//            currentCol = colu - 1;
+//        }
+//        found3 = 0;
+//        for (var rowu=6; rowu<=4; rowu--) {
+//            
+//             if(testClass(rowu, colu, players[(current+1) % 2]) {
+//                found3 = found3 + 1;
+//            } else {
+//                found3 = 0;
+//            } 
+//            
+//                if(testClass(rowu, colu, players[current]) && 
+//                testClass(rowu, colu, players[current]) && 
+//                testClass(rowu, colu, players[current])) {
+//                console.log("________ __");
+//                currentCol = colu;
+//                return true;
+//            }
+//            
+//            
+//        }
+//    }
+//    }
+    
+
+//    
+    if(notBeenFoundVertical[0] && testClass(6, 1, players[(current+1) % 2]) && testClass(5, 1, players[(current+1) % 2]) && testClass(4, 1, players[(current+1) % 2])) {
+        console.log("1");
+        currentCol = 1;
+                    
+        // now this one has already been found
+        notBeenFoundVertical[0] = false;
+        return true;
+                    
+                    
+                }
+//    
+     if(notBeenFoundVertical[1] && testClass(5, 1, players[(current+1) % 2]) && testClass(4, 1, players[(current+1) % 2]) && testClass(3, 1, players[(current+1) % 2])) {
+        console.log("2");
+                            notBeenFoundVertical[1] = false;
+        currentCol = 1;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[2] && testClass(4, 1, players[(current+1) % 2]) && testClass(3, 1, players[(current+1) % 2]) && testClass(2, 1, players[(current+1) % 2])) {
+                    notBeenFoundVertical[2] = false;
+        console.log("3");
+        currentCol = 1;
+        return true;
+    }
+//    
+//    
+       if(notBeenFoundVertical[3] && testClass(6, 2, players[(current+1) % 2]) && testClass(5, 2, players[(current+1) % 2]) && testClass(4, 2, players[(current+1) % 2])) 
+    
+    {
+                   notBeenFoundVertical[3] = false;
+        console.log("4");
+        currentCol = 2;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[4] && testClass(5, 2, players[(current+1) % 2]) && testClass(4, 2, players[(current+1) % 2]) && testClass(3, 2, players[(current+1) % 2])) {
+                 notBeenFoundVertical[4] = false;
+        console.log("5");
+        currentCol = 2;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[5] && testClass(4, 2, players[(current+1) % 2]) && testClass(3, 2, players[(current+1) % 2]) && testClass(2, 2, players[(current+1) % 2])) {
+                 notBeenFoundVertical[5] = false;
+        console.log("6");
+        currentCol = 2;
+        return true;
+    }
+//    
+//    
+         if(notBeenFoundVertical[6] && testClass(6, 3, players[(current+1) % 2]) && testClass(5, 3, players[(current+1) % 2]) && testClass(4, 3, players[(current+1) % 2])) {
+                     notBeenFoundVertical[6] = false;
+        console.log("7");
+        currentCol = 3;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[7] && testClass(5, 3, players[(current+1) % 2]) && testClass(4, 3, players[(current+1) % 2]) && testClass(3, 3, players[(current+1) % 2])) {
+                 notBeenFoundVertical[7] = false;
+        console.log("8");
+        currentCol = 3;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[8] && testClass(4, 3, players[(current+1) % 2]) && testClass(3, 3, players[(current+1) % 2]) && testClass(2, 3, players[(current+1) % 2])) {
+                 notBeenFoundVertical[8] = false;
+        console.log("9");
+        currentCol = 3;
+        return true;
+    }
+    console.log("hee");
+//    
+             if(notBeenFoundVertical[9] && testClass(6, 4, players[(current+1) % 2]) && testClass(5, 4, players[(current+1) % 2]) && testClass(4, 4, players[(current+1) % 2])) {
+                         notBeenFoundVertical[9] = false;
+        console.log("10");
+        currentCol = 4;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[10] && testClass(5, 4, players[(current+1) % 2]) && testClass(4, 4, players[(current+1) % 2]) && testClass(3, 4, players[(current+1) % 2])) {
+                 notBeenFoundVertical[10] = false;
+        console.log("11");
+        currentCol = 4;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[11] && testClass(4, 4, players[(current+1) % 2]) && testClass(3, 4, players[(current+1) % 2]) && testClass(2, 4, players[(current+1) % 2])) {
+                 notBeenFoundVertical[11] = false;
+        console.log("12");
+        currentCol = 4;
+        return true;
+    }
+//    
+                 if(notBeenFoundVertical[12] && testClass(6, 5, players[(current+1) % 2]) && testClass(5, 5, players[(current+1) % 2]) && testClass(4, 5, players[(current+1) % 2])) {
+                             notBeenFoundVertical[12] = false;
+        console.log("13");
+        currentCol = 5;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[13] && testClass(5, 5, players[(current+1) % 2]) && testClass(4, 5, players[(current+1) % 2]) && testClass(3, 5, players[(current+1) % 2])) {
+                 notBeenFoundVertical[13] = false;
+        console.log("14");
+        currentCol = 5;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[14] && testClass(4, 5, players[(current+1) % 2]) && testClass(3, 5, players[(current+1) % 2]) && testClass(2, 5, players[(current+1) % 2])) {
+                 notBeenFoundVertical[14] = false;
+        console.log("15");
+        currentCol = 5;
+        return true;
+    }
+//    
+//      
+                 if(notBeenFoundVertical[15] && testClass(6, 6, players[(current+1) % 2]) && testClass(5, 6, players[(current+1) % 2]) && testClass(4, 6, players[(current+1) % 2])) {
+                             notBeenFoundVertical[15] = false;
+        console.log("16");
+        currentCol = 6;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[16] && testClass(5, 6, players[(current+1) % 2]) && testClass(4, 6, players[(current+1) % 2]) && testClass(3, 6, players[(current+1) % 2])) {
+                 notBeenFoundVertical[16] = false;
+        console.log("17");
+        currentCol = 6;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[17] && testClass(4, 6, players[(current+1) % 2]) && testClass(3, 6, players[(current+1) % 2]) && testClass(2, 6, players[(current+1) % 2])) {
+                 notBeenFoundVertical[17] = false;
+        console.log("18");
+        currentCol = 6;
+        return true;
+    }
+//    
+                     if(notBeenFoundVertical[18] && testClass(6, 7, players[(current+1) % 2]) && testClass(5, 7, players[(current+1) % 2]) && testClass(4, 7, players[(current+1) % 2])) {
+                                 notBeenFoundVertical[18] = false;
+        console.log("19");
+        currentCol = 7;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[19] && testClass(5, 7, players[(current+1) % 2]) && testClass(4, 7, players[(current+1) % 2]) && testClass(3, 7, players[(current+1) % 2])) {
+                 notBeenFoundVertical[19] = false;
+        console.log("20");
+        currentCol = 7;
+        return true;
+    }
+    
+     if(notBeenFoundVertical[20] && testClass(4, 7, players[(current+1) % 2]) && testClass(3, 7, players[(current+1) % 2]) && testClass(2, 7, players[(current+1) % 2])) {
+                 notBeenFoundVertical[20] = false;
+        console.log("21");
+        currentCol = 7;
+        return true;
+    }
+
+    return false;
+}
+
 
     
 function chooseArrow() {
